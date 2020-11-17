@@ -76,6 +76,23 @@ public class EmailTest {
 		String expected = "testheader";
 		assertEquals(expected, email.headers.get("title"));
 	}
+
+
+	
+	/*
+	 * 3.2
+	 * Test addHeader
+	 * Check for exception when the name of the header is null
+	 */
+	@Test
+	public void testAddHeaderNullKey() throws Exception{
+		
+		thrown.expectMessage("name can not be null or empty");
+		email.addHeader("", "testheader");
+		
+	}
+	
+
 	
 	
 }
