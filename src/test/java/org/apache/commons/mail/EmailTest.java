@@ -64,5 +64,18 @@ public class EmailTest {
 		assertEquals(expected, email.getCcAddresses().get(0).toString());
 	}
 	
+
+	/*
+	 * 3.1
+	 * Test addHeader
+	 * Compare the value of the header with the expected result
+	 */
+	@Test
+	public void testAddHeader() throws Exception{
+		email.addHeader(HEADER_TEST, "testheader");
+		String expected = "testheader";
+		assertEquals(expected, email.headers.get("title"));
+	}
+	
 	
 }
