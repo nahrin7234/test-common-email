@@ -138,6 +138,25 @@ public class EmailTest {
 		
 		assertEquals("subject", message.getSubject());
 	}
+
+	/*
+	 * 5.2
+	 * Test buildMimeMessage
+	 * Check for exception when no From address is provided.
+	 */
+	@Test
+	public void test2buildMimeMessage() throws Exception{
+		
+		email.setHostName("localhost");
+		email.addHeader("header", "title");
+		email.setSubject("subject");
+		email.addTo("ac@gmail.com");
+		email.addCc("nah@gmail.com");
+
+
+		thrown.expectMessage("From address required");
+		email.buildMimeMessage();
+	}
 	
 	
 	
