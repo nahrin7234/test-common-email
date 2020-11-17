@@ -157,6 +157,23 @@ public class EmailTest {
 		thrown.expectMessage("From address required");
 		email.buildMimeMessage();
 	}
+
+	/*
+	 * 5.3
+	 * Test buildMimeMessage
+	 * Check for exception when no receiver address is provided
+	 */
+	@Test
+	public void test3buildMimeMessage() throws Exception{
+		
+		email.setHostName("localhost");
+		email.setFrom(TEST_EMAIL);
+		email.addHeader("header", "title");
+		email.setSubject("subject");
+
+		thrown.expectMessage("At least one receiver address required");
+		email.buildMimeMessage();
+	}
 	
 	
 	
