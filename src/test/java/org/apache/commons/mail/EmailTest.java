@@ -198,6 +198,18 @@ public class EmailTest {
 
 	
 	}
+
+	/*
+	 * 6.1
+	 * Test getHostName 
+	 * Compare the value of getHostName with the expected result when hostName is not null
+	 */
+	@Test
+	public void test1getHostName() throws Exception{
+		
+		email.setHostName("localhost");
+		assertEquals("localhost", email.getHostName());
+	}
 	
 	
 }
