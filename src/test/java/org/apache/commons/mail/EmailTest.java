@@ -175,6 +175,29 @@ public class EmailTest {
 		email.buildMimeMessage();
 	}
 	
+
+	/*
+	 * 5.4
+	 * Test buildMimeMessage
+	 * Check for exception when the message already exists. 
+	 */
+	@Test
+	public void test4buildMimeMessage() throws Exception{
+		email.setHostName("localhost");
+		email.setFrom(TEST_EMAIL);
+		email.addTo("ac@gmail.com");
+		email.addBcc("bj@gmail.com");
+		email.addCc("nah@gmail.com");
+		email.content = "Hello";
+
+		email.buildMimeMessage();
+		
+		
+		thrown.expectMessage("The MimeMessage is already built.");
+		email.buildMimeMessage();
+
+	
+	}
 	
 	
 }
