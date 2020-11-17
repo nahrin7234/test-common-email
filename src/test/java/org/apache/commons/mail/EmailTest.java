@@ -92,6 +92,17 @@ public class EmailTest {
 		
 	}
 	
+	/*
+	 * 3.3
+	 * Test addHeader
+	 * Check for exception when the value of the header is null
+	 */
+	@Test
+	public void testAddHeaderNullValue() throws Exception{
+		thrown.expectMessage("value can not be null or empty");
+		email.addHeader(HEADER_TEST, "");
+		
+	}
 
 	
 	
