@@ -211,5 +211,16 @@ public class EmailTest {
 		assertEquals("localhost", email.getHostName());
 	}
 	
+	/*
+	 * 6.2
+	 * Test getHostName 
+	 * Check when the hostName is null
+	 */
+	@Test
+	public void test2getHostName() throws Exception{
+		
+		String expected = null;
+		assertEquals(expected, email.getHostName());
+	}
 	
 }
