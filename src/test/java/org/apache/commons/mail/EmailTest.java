@@ -117,6 +117,28 @@ public class EmailTest {
 		assertEquals(1, email.getReplyToAddresses().size());
 	}
 	
+	/*
+	 * 5.1
+	 * Test buildMimeMessage
+	 * Compare the value of getSubject with an expected value
+	 */
+	@Test
+	public void test1buildMimeMessage() throws Exception{
+		email.setHostName("localhost");
+		email.setFrom(TEST_EMAIL);
+		email.addTo("ac@gmail.com");
+		email.addBcc("bj@gmail.com");
+		email.addCc("nah@gmail.com");
+		email.addHeader("header", "title");
+		email.setSubject("subject");
+
+		email.buildMimeMessage();
+		MimeMessage message = email.getMimeMessage();
+		message.saveChanges();
+		
+		assertEquals("subject", message.getSubject());
+	}
+	
 	
 	
 }
