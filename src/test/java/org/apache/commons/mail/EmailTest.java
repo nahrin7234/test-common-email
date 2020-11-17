@@ -253,5 +253,21 @@ public class EmailTest {
 		assertEquals(date1, email.getSentDate());
 
 	}
+
+
+	
+	/*
+	 * 9
+	 * Test getSocketConnectionTimeout
+	 * Check if the method returns the value of socketConnectionTimeout
+	 */
+	@Test
+	public void testgetSocketConnectionTimeout() throws Exception{
+		
+		int actual = email.getSocketConnectionTimeout();
+		int expected = 	email.socketConnectionTimeout;
+
+		assertEquals(expected, actual);
+	}
 	
 }
